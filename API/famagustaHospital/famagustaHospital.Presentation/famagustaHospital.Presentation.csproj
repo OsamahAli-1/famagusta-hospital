@@ -18,8 +18,4 @@
     <ProjectReference Include="..\famagustaHospital.ServiceContracts\famagustaHospital.ServiceContracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,15 @@
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\bin\Debug\net6.0\famagustaHospital.Entities.deps.json
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\bin\Debug\net6.0\famagustaHospital.Entities.dll
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\bin\Debug\net6.0\famagustaHospital.Entities.pdb
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\bin\Debug\net6.0\famagustaHospital.Shared.dll
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\bin\Debug\net6.0\famagustaHospital.Shared.pdb
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.csproj.AssemblyReference.cache
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.AssemblyInfoInputs.cache
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.AssemblyInfo.cs
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.csproj.CoreCompileInputs.cache
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.csproj.CopyComplete
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.dll
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\refint\famagustaHospital.Entities.dll
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\famagustaHospital.Entities.pdb
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Entities\obj\Debug\net6.0\ref\famagustaHospital.Entities.dll
