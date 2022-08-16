@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {}
+    "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+    "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
         "projectName": "famagustaHospital.Entities",
-        "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
-        "packagesPath": "C:\\Users\\OSAMA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\obj\\",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\OSAMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
-                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj"
+              "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj"
               }
             }
           }
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
+    "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
         "projectName": "famagustaHospital.Shared",
-        "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
-        "packagesPath": "C:\\Users\\OSAMA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\obj\\",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\OSAMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

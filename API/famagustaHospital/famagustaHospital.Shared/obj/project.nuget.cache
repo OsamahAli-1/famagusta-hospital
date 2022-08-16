@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Xx1JN2LpwOoIvtMV/t1mlQz8KerxFadVNkJ5l3bWpQPePrdDQI715l/ckNzCe5epDJInpBgV7RCB4yVSTzJWcg==",
+  "dgSpecHash": "NgMlpIXSUoDZG5JQR/1nNdOSg2tB+O6cT4JyepcR6yU96rN9w4sbOqOMA1qh+jVMIQgb/6Qt5HARArgDWAY8ZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\OSAMA\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Acer\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

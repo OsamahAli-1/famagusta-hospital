@@ -10,3 +10,15 @@ C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospita
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\refint\famagustaHospital.Shared.dll
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.pdb
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\ref\famagustaHospital.Shared.dll
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\bin\Debug\net6.0\famagustaHospital.Shared.deps.json
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\bin\Debug\net6.0\famagustaHospital.Shared.dll
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\bin\Debug\net6.0\famagustaHospital.Shared.pdb
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.csproj.AssemblyReference.cache
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.AssemblyInfo.cs
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.dll
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\refint\famagustaHospital.Shared.dll
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\famagustaHospital.Shared.pdb
+C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Shared\obj\Debug\net6.0\ref\famagustaHospital.Shared.dll
