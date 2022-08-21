@@ -11,13 +11,13 @@ namespace famagustaHospital.Repository.Configuration
             builder.HasData(
                 new IdentityRole
                 {
-                    Name = "Admin",
-                    NormalizedName = "ADMIN"
+                    Name = "Patient",
+                    NormalizedName = "PATIENT"
                 },
                 new IdentityRole
                 {
-                    Name = "Accountant",
-                    NormalizedName = "ACCOUNTANT"
+                    Name = "Doctor",
+                    NormalizedName = "DOCTOR"
                 }
                 );
 

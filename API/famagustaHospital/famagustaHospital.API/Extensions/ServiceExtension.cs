@@ -68,6 +68,7 @@ public static class ServiceExtension
         })
         .AddEntityFrameworkStores<RepositoryContext>()
         .AddDefaultTokenProviders();
+
     }
 
     public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)

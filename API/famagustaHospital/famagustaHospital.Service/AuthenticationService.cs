@@ -39,7 +39,6 @@ internal sealed class AuthenticationService : IAuthenticationService
 
         if (result.Succeeded)
             await _userManager.AddToRoleAsync(user, userDto.Role);
-
         return result;
     }
 

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\famagustaHospital.Entities\famagustaHospital.Entities.csproj" />
     <ProjectReference Include="..\famagustaHospital.Shared\famagustaHospital.Shared.csproj" />
   </ItemGroup>
 

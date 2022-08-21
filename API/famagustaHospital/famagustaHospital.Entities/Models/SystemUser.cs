@@ -18,5 +18,7 @@ public class SystemUser:IdentityUser
     public bool IsActive { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime RefreshTokenExpiryTime { get; set; }
+    public PatientUser patientUser { get; set; }
+    public DoctorUser doctorUser { get; set; }
 
 }

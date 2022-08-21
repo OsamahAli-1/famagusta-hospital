@@ -9,6 +9,7 @@ public interface IRepositoryManager
 {
     //IEntityRepository Entity { get; }
     ISystemUserRepository SystemUser { get; }
+    IPatientRepository Patient { get; }
     Task SaveAsync();
 
 }

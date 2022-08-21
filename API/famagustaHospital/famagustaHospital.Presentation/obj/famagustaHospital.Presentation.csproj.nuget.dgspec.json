@@ -4,6 +4,82 @@
     "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Presentation\\famagustaHospital.Presentation.csproj": {}
   },
   "projects": {
+    "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
+        "projectName": "famagustaHospital.Entities",
+        "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj",
+        "packagesPath": "C:\\Users\\OSAMA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\OSAMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
+                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Castle.Windsor": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Presentation\\famagustaHospital.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,6 +104,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj"
+              },
               "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.ServiceContracts\\famagustaHospital.ServiceContracts.csproj": {
                 "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.ServiceContracts\\famagustaHospital.ServiceContracts.csproj"
               }
@@ -44,6 +123,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Marvin.Cache.Headers": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -100,6 +183,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj"
+              },
               "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
                 "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj"
               }

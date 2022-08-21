@@ -9,7 +9,10 @@ public interface IServiceManager
 {
     ISystemUserService SystemUserService { get; }
     IAuthenticationService AuthenticationService { get; }
-
+    IPatientAuthenticationService PatientAuthenticationService { get; }
+    IPatientService PatientService { get; }
+   
     //IEntityService EntityService { get; }
+
 }
 

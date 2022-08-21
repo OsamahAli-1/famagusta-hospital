@@ -9,12 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Marvin.Cache.Headers" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\famagustaHospital.Entities\famagustaHospital.Entities.csproj" />
     <ProjectReference Include="..\famagustaHospital.ServiceContracts\famagustaHospital.ServiceContracts.csproj" />
   </ItemGroup>
 

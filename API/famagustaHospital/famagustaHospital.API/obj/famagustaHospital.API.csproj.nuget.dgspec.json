@@ -322,6 +322,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj"
+              },
               "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.ServiceContracts\\famagustaHospital.ServiceContracts.csproj": {
                 "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.ServiceContracts\\famagustaHospital.ServiceContracts.csproj"
               }
@@ -338,6 +341,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Marvin.Cache.Headers": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -465,6 +472,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj": {
+                "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Entities\\famagustaHospital.Entities.csproj"
+              },
               "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj": {
                 "projectPath": "C:\\Users\\OSAMA\\Desktop\\famagusta-hospital\\API\\famagustaHospital\\famagustaHospital.Shared\\famagustaHospital.Shared.csproj"
               }

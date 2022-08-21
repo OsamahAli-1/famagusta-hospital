@@ -1479,6 +1479,7 @@
       "famagustaHospital.ServiceContracts/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Identity.Core": "6.0.1",
+          "famagustaHospital.Entities": "1.0.0",
           "famagustaHospital.Shared": "1.0.0"
         },
         "runtime": {
