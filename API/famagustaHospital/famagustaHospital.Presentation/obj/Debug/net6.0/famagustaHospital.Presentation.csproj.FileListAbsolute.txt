@@ -16,26 +16,5 @@ C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospita
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\refint\famagustaHospital.Presentation.dll
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.pdb
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\ref\famagustaHospital.Presentation.dll
-<<<<<<< HEAD
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Entities.dll
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Entities.pdb
-=======
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Presentation.deps.json
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Presentation.dll
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Presentation.pdb
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Presentation.xml
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.ServiceContracts.dll
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Shared.dll
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.ServiceContracts.pdb
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Shared.pdb
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.csproj.AssemblyReference.cache
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.AssemblyInfoInputs.cache
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.AssemblyInfo.cs
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.csproj.CoreCompileInputs.cache
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.csproj.CopyComplete
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.dll
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\refint\famagustaHospital.Presentation.dll
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\famagustaHospital.Presentation.pdb
-C:\Users\Acer\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\ref\famagustaHospital.Presentation.dll
->>>>>>> 48608ed590304a111ca3a6508b558dec328d59fd
