@@ -23,8 +23,6 @@ internal sealed class PatientAuthenticationService : IPatientAuthenticationServi
     private SystemUser? _user;
     private readonly JwtConfiguration _jwtConfiguration;
     private readonly IRepositoryManager _repository;
-    //private readonly IServiceManager _service;
-    //private readonly IPatientService _patientService;
 
     public PatientAuthenticationService(IRepositoryManager repository,ILoggerManager logger, IMapper mapper, UserManager<SystemUser> userManager, IOptions<JwtConfiguration> configuration)
     {
@@ -34,21 +32,26 @@ internal sealed class PatientAuthenticationService : IPatientAuthenticationServi
         _configuration = configuration;
         _jwtConfiguration = _configuration.Value;
         _repository = repository;
-        //_service = service;
+       
     }
 
     public async Task<IdentityResult> RegisterUser(PatientUserCreationDto patientUserDto)
     {
         var user = _mapper.Map<SystemUser>(patientUserDto);
+        user.Role = "Patient";
         var patient = _mapper.Map<PatientUser>(patientUserDto);
         var result = await _userManager.CreateAsync(user, patientUserDto.Password);
 
         if (result.Succeeded)
-            await _userManager.AddToRoleAsync(user, patientUserDto.Role);
+            await _userManager.AddToRoleAsync(user, user.Role);
+        var random = new Random();
+        string medicalNum = string.Empty;
+        for (int i = 0; i < 10; i++)
+            medicalNum = String.Concat(medicalNum, random.Next(10).ToString());
+        patient.MedicalNumber = medicalNum;
         patient.systemUserId = user.Id;
         _repository.Patient.CreatePatient(patient);
         await _repository.SaveAsync();
-        //await _patientService.CreatePatientAsync(patient);
         return result;
     }
 

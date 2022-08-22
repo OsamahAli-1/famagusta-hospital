@@ -10,6 +10,7 @@ public interface IRepositoryManager
     //IEntityRepository Entity { get; }
     ISystemUserRepository SystemUser { get; }
     IPatientRepository Patient { get; }
+    IDoctorRepository Doctor { get; }
     Task SaveAsync();
 
 }

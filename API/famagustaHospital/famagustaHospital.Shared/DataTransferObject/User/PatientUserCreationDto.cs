@@ -21,8 +21,6 @@ public record PatientUserCreationDto
     [Required]
     public string? Password { get; set; }
     [Required]
-    public string? Role { get; set; }
-    public string? MedicalNumber { get; set; }
     public string? Gender { get; set; }
     public DateTime BirthDate { get; set; }
     public float? Length { get; set; }

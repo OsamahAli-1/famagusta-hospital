@@ -10,6 +10,7 @@ public interface IServiceManager
     ISystemUserService SystemUserService { get; }
     IAuthenticationService AuthenticationService { get; }
     IPatientAuthenticationService PatientAuthenticationService { get; }
+    IDoctorAuthenticationService DoctorAuthenticationService { get; }
     IPatientService PatientService { get; }
    
     //IEntityService EntityService { get; }
