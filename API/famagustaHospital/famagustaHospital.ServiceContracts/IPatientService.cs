@@ -10,6 +10,7 @@ namespace famagustaHospital.ServiceContracts
 {
     public interface IPatientService
     {
-        Task<PatientUserDto> CreatePatientAsync(PatientUser patientUser);
+        Task<PatientUserDto> GetPatientAsync(string userId,bool trackChanges);
+        PatientUserDto GetPatient(string userId,bool trackChanges);
     }
 }

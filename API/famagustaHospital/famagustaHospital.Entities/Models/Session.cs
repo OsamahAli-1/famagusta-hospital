@@ -16,5 +16,9 @@ namespace famagustaHospital.Entities.Models
         public DateTime EndAt { get; set; }
         public string Status { get; set; }
         public ICollection<Medicine>? medicines { get; set; }
+        public Guid PatientUserId { get; set; }
+        public PatientUser PatientUser { get; set; }
+        public Guid DoctorUserId { get; set; }
+        public DoctorUser DoctorUser { get; set; }
     }
 }

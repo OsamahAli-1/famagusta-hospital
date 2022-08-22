@@ -16,7 +16,7 @@ namespace famagustaHospital.Entities.Models
         public string? Department { get; set; }
         public string? Position { get; set; }
         public ICollection<Session> Sessions { get; set; }
-        public ICollection<DoctorAvailablability> doctorAvailablabilities { get; set; }
+        public ICollection<DoctorAvailability> doctorAvailabilities { get; set; }
         public ICollection<Qualification> qualifications{ get; set; }
         public ICollection<Experience> experiences{ get; set; }
         public string systemUserId { get; set; }

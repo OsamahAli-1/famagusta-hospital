@@ -22,11 +22,16 @@ namespace famagustaHospital.Service
             _logger = logger;
             _mapper = mapper;
         }
-        public async Task<PatientUserDto> CreatePatientAsync(PatientUser patientUser)
+        public async Task<PatientUserDto> GetPatientAsync(string userId, bool trackChanges)
         {
-            _repository.Patient.CreatePatient(patientUser);
-            await _repository.SaveAsync();
-            var patientToReturn = _mapper.Map<PatientUserDto>(patientUser);
+            var patientEntity = await _repository.Patient.GetPatientAsync(userId, trackChanges);
+            var patientToReturn = _mapper.Map<PatientUserDto>(patientEntity);
+            return patientToReturn;
+        }
+        public PatientUserDto GetPatient(string userId, bool trackChanges)
+        {
+            var patientEntity = _repository.Patient.GetPatient(userId, trackChanges);
+            var patientToReturn = _mapper.Map<PatientUserDto>(patientEntity);
             return patientToReturn;
         }
     }

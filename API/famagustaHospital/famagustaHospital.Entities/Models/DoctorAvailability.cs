@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace famagustaHospital.Entities.Models
 {
-    public class DoctorAvailablability
+    public class DoctorAvailability
     {
         public Guid Id { get; set; }
         public DateTime StartAt { get; set; }
         public DateTime EndAt { get; set; }
+        public Guid DoctorUserId { get; set; }
+        public DoctorUser DoctorUser { get; set; }
     }
 }

@@ -15,6 +15,7 @@ public sealed class ServiceManager : IServiceManager
     private readonly Lazy<IAuthenticationService> _authService;
     private readonly Lazy<IPatientAuthenticationService> _patientAuthService;
     private readonly Lazy<IDoctorAuthenticationService> _doctorAuthService;
+    private readonly Lazy<IChronicService> _chronicService;
 
 
 
@@ -26,6 +27,7 @@ public sealed class ServiceManager : IServiceManager
         _patientService = new Lazy<IPatientService>(() => new PatientService(repositoryManager, logger, mapper));
         _patientAuthService = new Lazy<IPatientAuthenticationService>(() => new PatientAuthenticationService(repositoryManager, logger, mapper, manager, configuration));
         _doctorAuthService = new Lazy<IDoctorAuthenticationService>(() => new DoctorAuthenticationService(repositoryManager, logger, mapper, manager, configuration));
+        _chronicService = new Lazy<IChronicService>(() => new ChronicService(repositoryManager, logger, mapper));
         //_entityService = new Lazy<IEntityService>(() => new EntityService(repositoryManager, logger, mapper));
 
     }
@@ -34,6 +36,7 @@ public sealed class ServiceManager : IServiceManager
     public IPatientService PatientService => _patientService.Value;
     public IPatientAuthenticationService PatientAuthenticationService => _patientAuthService.Value;
     public IDoctorAuthenticationService DoctorAuthenticationService => _doctorAuthService.Value;
+    public IChronicService ChronicService => _chronicService.Value;
     //public IEntityService EntityService => _entityService.Value;
 
 }

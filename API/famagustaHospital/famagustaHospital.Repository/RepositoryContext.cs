@@ -25,7 +25,7 @@ public class RepositoryContext : IdentityDbContext<SystemUser>
     public DbSet<Medicine>? Medicine { get; set; }
     public DbSet<Chronic>? Chronic { get; set; }
     public DbSet<Session>? Session { get; set; }
-    public DbSet<DoctorAvailablability>? DoctorAvailablability { get; set; }
+    public DbSet<DoctorAvailability>? DoctorAvailablability { get; set; }
     public DbSet<Experience>? Experience { get; set; }
     public DbSet<Qualification>? Qualification { get; set; }
 }

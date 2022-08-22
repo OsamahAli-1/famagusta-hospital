@@ -15,5 +15,7 @@ namespace famagustaHospital.Entities.Models
         public string StartYear { get; set; }
         public string EndYear { get; set; }
         public string? Position { get; set; }
+        public Guid DoctorUserId { get; set; }
+        public DoctorUser DoctorUser { get; set; }
     }
 }

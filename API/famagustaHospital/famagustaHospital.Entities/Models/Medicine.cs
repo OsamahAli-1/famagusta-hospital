@@ -11,5 +11,7 @@ namespace famagustaHospital.Entities.Models
         public Guid Id { get; set; }
         public string MedicineName { get; set; }
         public string Instruction { get; set; }
+        public Guid SessionId { get; set; }
+        public Session Session { get; set; }
     }
 }
