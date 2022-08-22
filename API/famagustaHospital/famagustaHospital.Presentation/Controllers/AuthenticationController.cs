@@ -47,7 +47,12 @@ namespace famagustaHospital.Presentation.Controllers
             }
             return StatusCode(201);
         }
-
+        [HttpPost("login")]
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticationDto user)
+        {
+            var tokenDto = await _service.AuthenticationService.AuthenticateUser(user);
+            return Ok(tokenDto);
+        }
 
     }
 }
