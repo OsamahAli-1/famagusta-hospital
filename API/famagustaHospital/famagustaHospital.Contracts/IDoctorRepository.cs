@@ -9,6 +9,8 @@ namespace famagustaHospital.Contracts
 {
     public interface IDoctorRepository
     {
-        void CreatePatient(DoctorUser doctorUser);
+        void CreateDoctor(DoctorUser doctorUser);
+        Task<DoctorUser> GetDoctorAsync(string userId, bool trackChanges);
+        DoctorUser GetDoctor(string userId, bool trackChanges);
     }
 }

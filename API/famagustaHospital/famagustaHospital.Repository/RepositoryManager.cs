@@ -15,6 +15,7 @@ public sealed class RepositoryManager : IRepositoryManager
     private readonly Lazy<IPatientRepository> _patientRepository;
     private readonly Lazy<IDoctorRepository> _doctorRepository;
     private readonly Lazy<IChronicRepository> _chronicRepository;
+    private readonly Lazy<IQualificationRepository> _qualificationRepository;
     public RepositoryManager(RepositoryContext repositoryContext)
     {
         _repositoryContext = repositoryContext;
@@ -23,6 +24,7 @@ public sealed class RepositoryManager : IRepositoryManager
         _patientRepository = new Lazy<IPatientRepository>(() => new PatientRepository(repositoryContext));
         _doctorRepository = new Lazy<IDoctorRepository>(() => new DoctorRepository(repositoryContext));
         _chronicRepository = new Lazy<IChronicRepository>(() => new ChronicRepository(repositoryContext));
+        _qualificationRepository = new Lazy<IQualificationRepository>(() => new QualificationRepository(repositoryContext));
     }
 
     //public IEntityRepository Entity => _entityRepository.Value;
@@ -30,6 +32,7 @@ public sealed class RepositoryManager : IRepositoryManager
     public IPatientRepository Patient => _patientRepository.Value;
     public IDoctorRepository Doctor => _doctorRepository.Value;
     public IChronicRepository Chronic => _chronicRepository.Value;
+    public IQualificationRepository Qualification => _qualificationRepository.Value;
     public async Task SaveAsync() => await _repositoryContext.SaveChangesAsync();
 
 }

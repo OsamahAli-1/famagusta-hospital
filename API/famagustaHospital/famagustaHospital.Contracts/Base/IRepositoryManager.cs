@@ -12,6 +12,7 @@ public interface IRepositoryManager
     IPatientRepository Patient { get; }
     IDoctorRepository Doctor { get; }
     IChronicRepository Chronic { get; }
+    IQualificationRepository Qualification { get; }
     Task SaveAsync();
 
 }

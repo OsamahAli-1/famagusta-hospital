@@ -55,7 +55,7 @@ namespace famagustaHospital.Service
                 staffNum = String.Concat(staffNum, random.Next(10).ToString());
             doctor.StaffNumber = staffNum;
             doctor.systemUserId = user.Id;
-            _repository.Doctor.CreatePatient(doctor);
+            _repository.Doctor.CreateDoctor(doctor);
             await _repository.SaveAsync();
             return result;
         }

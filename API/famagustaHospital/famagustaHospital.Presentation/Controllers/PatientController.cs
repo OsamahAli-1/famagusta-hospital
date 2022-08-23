@@ -19,19 +19,13 @@ namespace famagustaHospital.Presentation.Controllers
     {
         private readonly IServiceManager _service;
         
-        public PatientController(IServiceManager service, UserManager<SystemUser> manager)
+        public PatientController(IServiceManager service)
         {
             _service = service;
         }
         
 
-        [HttpPost("chronic")]
-        public async Task<IActionResult> CraeteChronic(string id,[FromBody] ChronicCreationDto chronicForCreation) 
-        { 
-            var patient = _service.PatientService.GetPatient(id, trackChanges: false);
-            var createdChronic = await _service.ChronicService.CreateChronic(patient.Id, chronicForCreation);
-            return Ok(createdChronic);
-        }
+        
 
     }
 }
