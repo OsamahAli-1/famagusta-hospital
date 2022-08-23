@@ -13,6 +13,7 @@ public interface IRepositoryManager
     IDoctorRepository Doctor { get; }
     IChronicRepository Chronic { get; }
     IQualificationRepository Qualification { get; }
+    IExperienceRepository Experience { get; }
     Task SaveAsync();
 
 }

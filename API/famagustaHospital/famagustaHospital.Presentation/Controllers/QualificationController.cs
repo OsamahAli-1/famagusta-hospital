@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace famagustaHospital.Presentation.Controllers
 {
-    [Route("api/patient/{id}")]
+    [Route("api/doctors/")]
     [ApiController]
     [Authorize]
     public class QualificationController:ControllerBase
@@ -20,7 +20,7 @@ namespace famagustaHospital.Presentation.Controllers
         {
             _service = service;
         }
-        [HttpPost("qualification")]
+        [HttpPost("{id}/qualification")]
         [Authorize(Roles ="Doctor")]
         public async Task<IActionResult> CreateQualification(string id, [FromBody] QualificationCreationDto qualificationForCreation)
         {

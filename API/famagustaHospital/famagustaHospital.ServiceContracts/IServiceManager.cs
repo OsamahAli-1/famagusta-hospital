@@ -15,6 +15,7 @@ public interface IServiceManager
     IChronicService ChronicService { get; }
     IDoctorService DoctorService { get; }
     IQualificationService QualificationService { get; }
+    IExperienceService ExperienceService { get; }
 
     //IEntityService EntityService { get; }
 
