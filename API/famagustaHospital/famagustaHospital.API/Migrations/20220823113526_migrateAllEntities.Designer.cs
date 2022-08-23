@@ -12,8 +12,8 @@ using famagustaHospital.Repository;
 namespace famagustaHospital.API.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220819064108_roleAttrDeletedFromDoctorAndPatientClasses")]
-    partial class roleAttrDeletedFromDoctorAndPatientClasses
+    [Migration("20220823113526_migrateAllEntities")]
+    partial class migrateAllEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,7 @@ namespace famagustaHospital.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PatientUserId")
+                    b.Property<Guid>("PatientUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -47,17 +47,20 @@ namespace famagustaHospital.API.Migrations
                     b.ToTable("Chronic");
                 });
 
-            modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorAvailablability", b =>
+            modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorAvailability", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("DoctorUserId")
+                    b.Property<Guid>("DoctorUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("EndAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("StartAt")
                         .HasColumnType("datetime2");
@@ -66,7 +69,7 @@ namespace famagustaHospital.API.Migrations
 
                     b.HasIndex("DoctorUserId");
 
-                    b.ToTable("DoctorAvailablability");
+                    b.ToTable("DoctorAvailability");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorUser", b =>
@@ -110,7 +113,7 @@ namespace famagustaHospital.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("DoctorUserId")
+                    b.Property<Guid>("DoctorUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("EndYear")
@@ -149,7 +152,7 @@ namespace famagustaHospital.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("SessionId")
+                    b.Property<Guid>("SessionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -206,7 +209,7 @@ namespace famagustaHospital.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("DoctorUserId")
+                    b.Property<Guid>("DoctorUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("EndYear")
@@ -248,13 +251,13 @@ namespace famagustaHospital.API.Migrations
                     b.Property<string>("Diagnostic")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("DoctorUserId")
+                    b.Property<Guid>("DoctorUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("EndAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("PatientUserId")
+                    b.Property<Guid>("PatientUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("StartAt")
@@ -389,15 +392,15 @@ namespace famagustaHospital.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2ac9496c-12fb-424e-9d57-313e5df74447",
-                            ConcurrencyStamp = "03df811b-29a0-4fd8-9592-268703207de2",
+                            Id = "3efd35ae-732f-458f-b04e-8c51de2d1376",
+                            ConcurrencyStamp = "740236fa-09a8-482b-89ba-6b170b0b90a3",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "5fbcedb3-a430-409f-84df-9a9d4f209a09",
-                            ConcurrencyStamp = "5a883f9f-b44f-4519-a3e9-3c1333e354a7",
+                            Id = "6f4e3eea-42b1-47f7-b676-b7daf218a886",
+                            ConcurrencyStamp = "9db0c0cd-9de1-4982-8862-7a5c8659cc6f",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         });
@@ -511,16 +514,24 @@ namespace famagustaHospital.API.Migrations
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.Chronic", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.PatientUser", null)
+                    b.HasOne("famagustaHospital.Entities.Models.PatientUser", "PatientUser")
                         .WithMany("Chronics")
-                        .HasForeignKey("PatientUserId");
+                        .HasForeignKey("PatientUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PatientUser");
                 });
 
-            modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorAvailablability", b =>
+            modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorAvailability", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", null)
-                        .WithMany("doctorAvailablabilities")
-                        .HasForeignKey("DoctorUserId");
+                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", "DoctorUser")
+                        .WithMany("doctorAvailabilities")
+                        .HasForeignKey("DoctorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DoctorUser");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorUser", b =>
@@ -536,16 +547,24 @@ namespace famagustaHospital.API.Migrations
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.Experience", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", null)
+                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", "DoctorUser")
                         .WithMany("experiences")
-                        .HasForeignKey("DoctorUserId");
+                        .HasForeignKey("DoctorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DoctorUser");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.Medicine", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.Session", null)
+                    b.HasOne("famagustaHospital.Entities.Models.Session", "Session")
                         .WithMany("medicines")
-                        .HasForeignKey("SessionId");
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Session");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.PatientUser", b =>
@@ -561,20 +580,32 @@ namespace famagustaHospital.API.Migrations
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.Qualification", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", null)
+                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", "DoctorUser")
                         .WithMany("qualifications")
-                        .HasForeignKey("DoctorUserId");
+                        .HasForeignKey("DoctorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DoctorUser");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.Session", b =>
                 {
-                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", null)
+                    b.HasOne("famagustaHospital.Entities.Models.DoctorUser", "DoctorUser")
                         .WithMany("Sessions")
-                        .HasForeignKey("DoctorUserId");
+                        .HasForeignKey("DoctorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("famagustaHospital.Entities.Models.PatientUser", null)
+                    b.HasOne("famagustaHospital.Entities.Models.PatientUser", "PatientUser")
                         .WithMany("Sessions")
-                        .HasForeignKey("PatientUserId");
+                        .HasForeignKey("PatientUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DoctorUser");
+
+                    b.Navigation("PatientUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -632,7 +663,7 @@ namespace famagustaHospital.API.Migrations
                 {
                     b.Navigation("Sessions");
 
-                    b.Navigation("doctorAvailablabilities");
+                    b.Navigation("doctorAvailabilities");
 
                     b.Navigation("experiences");
 

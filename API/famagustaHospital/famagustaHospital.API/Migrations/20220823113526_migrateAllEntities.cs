@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace famagustaHospital.API.Migrations
 {
-    public partial class allRelationsMigration : Migration
+    public partial class migrateAllEntities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -167,7 +167,6 @@ namespace famagustaHospital.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StaffNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     systemUserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
@@ -189,7 +188,6 @@ namespace famagustaHospital.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MedicalNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Length = table.Column<float>(type: "real", nullable: true),
@@ -208,22 +206,24 @@ namespace famagustaHospital.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DoctorAvailablability",
+                name: "DoctorAvailability",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StartAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    IsAvailable = table.Column<bool>(type: "bit", nullable: false),
+                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DoctorAvailablability", x => x.Id);
+                    table.PrimaryKey("PK_DoctorAvailability", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DoctorAvailablability_DoctorUser_DoctorUserId",
+                        name: "FK_DoctorAvailability_DoctorUser_DoctorUserId",
                         column: x => x.DoctorUserId,
                         principalTable: "DoctorUser",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -237,7 +237,7 @@ namespace famagustaHospital.API.Migrations
                     StartYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EndYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -246,7 +246,8 @@ namespace famagustaHospital.API.Migrations
                         name: "FK_Experience_DoctorUser_DoctorUserId",
                         column: x => x.DoctorUserId,
                         principalTable: "DoctorUser",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -261,7 +262,7 @@ namespace famagustaHospital.API.Migrations
                     StartYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EndYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     QualificationName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -270,7 +271,8 @@ namespace famagustaHospital.API.Migrations
                         name: "FK_Qualification_DoctorUser_DoctorUserId",
                         column: x => x.DoctorUserId,
                         principalTable: "DoctorUser",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -280,7 +282,7 @@ namespace famagustaHospital.API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DiseaseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DiagnosedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PatientUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    PatientUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -289,7 +291,8 @@ namespace famagustaHospital.API.Migrations
                         name: "FK_Chronic_PatientUser_PatientUserId",
                         column: x => x.PatientUserId,
                         principalTable: "PatientUser",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -302,8 +305,8 @@ namespace famagustaHospital.API.Migrations
                     StartAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    PatientUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    PatientUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DoctorUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -327,7 +330,7 @@ namespace famagustaHospital.API.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MedicineName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Instruction = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SessionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    SessionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -336,18 +339,19 @@ namespace famagustaHospital.API.Migrations
                         name: "FK_Medicine_Session_SessionId",
                         column: x => x.SessionId,
                         principalTable: "Session",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "bb1d60e2-fa7f-48e0-aa02-628b507cc771", "f5e1dfe3-b3b4-45e2-9a00-fd5138201ad2", "Doctor", "DOCTOR" });
+                values: new object[] { "3efd35ae-732f-458f-b04e-8c51de2d1376", "740236fa-09a8-482b-89ba-6b170b0b90a3", "Patient", "PATIENT" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c7c4e14c-85e6-4c5a-b0ad-43a685bb6ca5", "973cf628-a033-482c-925b-82396d9bdd1f", "Patient", "PATIENT" });
+                values: new object[] { "6f4e3eea-42b1-47f7-b676-b7daf218a886", "9db0c0cd-9de1-4982-8862-7a5c8659cc6f", "Doctor", "DOCTOR" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -394,8 +398,8 @@ namespace famagustaHospital.API.Migrations
                 column: "PatientUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DoctorAvailablability_DoctorUserId",
-                table: "DoctorAvailablability",
+                name: "IX_DoctorAvailability_DoctorUserId",
+                table: "DoctorAvailability",
                 column: "DoctorUserId");
 
             migrationBuilder.CreateIndex(
@@ -457,7 +461,7 @@ namespace famagustaHospital.API.Migrations
                 name: "Chronic");
 
             migrationBuilder.DropTable(
-                name: "DoctorAvailablability");
+                name: "DoctorAvailability");
 
             migrationBuilder.DropTable(
                 name: "Experience");

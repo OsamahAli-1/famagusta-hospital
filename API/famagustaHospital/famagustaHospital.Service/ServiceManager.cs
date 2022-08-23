@@ -19,6 +19,7 @@ public sealed class ServiceManager : IServiceManager
     private readonly Lazy<IDoctorService> _doctorService;
     private readonly Lazy<IQualificationService> _qualificationService;
     private readonly Lazy<IExperienceService> _experienceService;
+    private readonly Lazy<IDoctorAvailabilityService> _doctorAvailabilityService;
 
 
     public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper, UserManager<SystemUser> manager, IOptions<JwtConfiguration> configuration)
@@ -32,6 +33,7 @@ public sealed class ServiceManager : IServiceManager
         _doctorService = new Lazy<IDoctorService>(() => new DoctorService(repositoryManager, logger, mapper));
         _qualificationService = new Lazy<IQualificationService>(() => new QualificationService(repositoryManager, logger, mapper));
         _experienceService = new Lazy<IExperienceService>(() => new ExperienceService(repositoryManager, logger, mapper));
+        _doctorAvailabilityService = new Lazy<IDoctorAvailabilityService>(() => new DoctorAvailabilityService(repositoryManager, logger, mapper));
         //_entityService = new Lazy<IEntityService>(() => new EntityService(repositoryManager, logger, mapper));
 
     }
@@ -44,6 +46,7 @@ public sealed class ServiceManager : IServiceManager
     public IDoctorService DoctorService => _doctorService.Value;
     public IQualificationService QualificationService => _qualificationService.Value;
     public IExperienceService ExperienceService => _experienceService.Value;
+    public IDoctorAvailabilityService DoctorAvailabilityService => _doctorAvailabilityService.Value;
     //public IEntityService EntityService => _entityService.Value;
 
 }

@@ -57,6 +57,9 @@ namespace famagustaHospital.API.Migrations
                     b.Property<DateTime>("EndAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("StartAt")
                         .HasColumnType("datetime2");
 
@@ -64,7 +67,7 @@ namespace famagustaHospital.API.Migrations
 
                     b.HasIndex("DoctorUserId");
 
-                    b.ToTable("DoctorAvailablability");
+                    b.ToTable("DoctorAvailability");
                 });
 
             modelBuilder.Entity("famagustaHospital.Entities.Models.DoctorUser", b =>
@@ -387,15 +390,15 @@ namespace famagustaHospital.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a66b87b2-7382-4b30-8b97-4c09795e079a",
-                            ConcurrencyStamp = "06a4ba84-bdeb-4d67-bdf8-13a613b8cdfb",
+                            Id = "3efd35ae-732f-458f-b04e-8c51de2d1376",
+                            ConcurrencyStamp = "740236fa-09a8-482b-89ba-6b170b0b90a3",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "85c1a84e-41ef-4b86-9b87-09c0580dda25",
-                            ConcurrencyStamp = "8a6148e0-98f9-4b3d-9ae7-b4425442e19c",
+                            Id = "6f4e3eea-42b1-47f7-b676-b7daf218a886",
+                            ConcurrencyStamp = "9db0c0cd-9de1-4982-8862-7a5c8659cc6f",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         });

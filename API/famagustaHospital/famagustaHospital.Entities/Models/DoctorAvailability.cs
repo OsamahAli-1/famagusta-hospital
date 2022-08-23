@@ -11,6 +11,7 @@ namespace famagustaHospital.Entities.Models
         public Guid Id { get; set; }
         public DateTime StartAt { get; set; }
         public DateTime EndAt { get; set; }
+        public bool IsAvailable { get; set; }
         public Guid DoctorUserId { get; set; }
         public DoctorUser DoctorUser { get; set; }
     }

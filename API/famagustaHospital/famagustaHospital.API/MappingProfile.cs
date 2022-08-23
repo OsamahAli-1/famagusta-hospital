@@ -2,6 +2,7 @@
 using famagustaHospital.Entities.Models;
 using famagustaHospital.Shared.DataTransferObject;
 using famagustaHospital.Shared.DataTransferObject.DoctorUser;
+using famagustaHospital.Shared.DataTransferObject.DoctorUser.DoctorAvailability;
 using famagustaHospital.Shared.DataTransferObject.DoctorUser.Experience;
 using famagustaHospital.Shared.DataTransferObject.DoctorUser.Qualification;
 using famagustaHospital.Shared.DataTransferObject.PatientUser;
@@ -25,6 +26,8 @@ public class MappingProfile : Profile
         CreateMap<Qualification, QualificationDto>();
         CreateMap<ExperienceCreationDto, Experience>();
         CreateMap<Experience,ExperienceDto>();
+        CreateMap<DoctorAvailabilityCreationDto, DoctorAvailability>();
+        CreateMap<DoctorAvailability, DoctorAvailabilityDto>();
     }
 }
 

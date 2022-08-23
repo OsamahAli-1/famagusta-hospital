@@ -14,6 +14,7 @@ public interface IRepositoryManager
     IChronicRepository Chronic { get; }
     IQualificationRepository Qualification { get; }
     IExperienceRepository Experience { get; }
+    IDoctorAvailabilityRepository DoctorAvailability { get; }
     Task SaveAsync();
 
 }
