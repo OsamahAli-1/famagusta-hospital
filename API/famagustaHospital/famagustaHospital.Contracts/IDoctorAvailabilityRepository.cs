@@ -10,5 +10,7 @@ namespace famagustaHospital.Contracts
     public interface IDoctorAvailabilityRepository
     {
         void CreateDoctorAvailability(DoctorAvailability doctorAvailability);
+        Task<DoctorAvailability> GetDoctorAvailabilityAsync(Guid doctorAvailabilityId, bool trackChanges);
+        DoctorAvailability GetDoctorAvailability(Guid doctorAvailabilityId, bool trackChanges);
     }
 }

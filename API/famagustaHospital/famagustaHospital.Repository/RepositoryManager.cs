@@ -18,6 +18,7 @@ public sealed class RepositoryManager : IRepositoryManager
     private readonly Lazy<IQualificationRepository> _qualificationRepository;
     private readonly Lazy<IExperienceRepository> _experienceRepository;
     private readonly Lazy<IDoctorAvailabilityRepository> _doctorAvailabilityRepository;
+    private readonly Lazy<ISessionRepository> _sessionRepository;
 
     public RepositoryManager(RepositoryContext repositoryContext)
     {
@@ -30,6 +31,7 @@ public sealed class RepositoryManager : IRepositoryManager
         _qualificationRepository = new Lazy<IQualificationRepository>(() => new QualificationRepository(repositoryContext));
         _experienceRepository = new Lazy<IExperienceRepository>(() => new ExperienceRepository(repositoryContext));
         _doctorAvailabilityRepository = new Lazy<IDoctorAvailabilityRepository>(() => new DoctorAvailabilityRepository(repositoryContext));
+        _sessionRepository = new Lazy<ISessionRepository>(() => new SessionRepository(repositoryContext));
     }
 
     //public IEntityRepository Entity => _entityRepository.Value;SSS
@@ -40,6 +42,7 @@ public sealed class RepositoryManager : IRepositoryManager
     public IQualificationRepository Qualification => _qualificationRepository.Value;
     public IExperienceRepository Experience => _experienceRepository.Value;
     public IDoctorAvailabilityRepository DoctorAvailability => _doctorAvailabilityRepository.Value;
+    public ISessionRepository Session => _sessionRepository.Value;
     public async Task SaveAsync() => await _repositoryContext.SaveChangesAsync();
 
 }

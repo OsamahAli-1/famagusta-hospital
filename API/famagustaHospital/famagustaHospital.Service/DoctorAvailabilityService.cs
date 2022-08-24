@@ -31,5 +31,17 @@ namespace famagustaHospital.Service
             var doctorAvailabilityToReturn = _mapper.Map<DoctorAvailabilityDto>(doctorAvailabilityEntity);
             return doctorAvailabilityToReturn;
         }
+        public async Task<DoctorAvailabilityDto> GetDoctorAvailabilityAsync(Guid doctorAvailabilityId, bool trackChanges)
+        {
+            var doctorAvailabilityEntity = await _repository.DoctorAvailability.GetDoctorAvailabilityAsync(doctorAvailabilityId,trackChanges);
+            var doctorAvailabilityToReturn = _mapper.Map<DoctorAvailabilityDto>(doctorAvailabilityEntity);
+            return doctorAvailabilityToReturn;
+        }
+        public DoctorAvailabilityDto GetDoctorAvailability(Guid doctorAvailabilityId, bool trackChanges)
+        {
+            var doctorAvailabilityEntity = _repository.DoctorAvailability.GetDoctorAvailability(doctorAvailabilityId, trackChanges);
+            var doctorAvailabilityToReturn = _mapper.Map<DoctorAvailabilityDto>(doctorAvailabilityEntity);
+            return doctorAvailabilityToReturn;
+        }
     }
 }

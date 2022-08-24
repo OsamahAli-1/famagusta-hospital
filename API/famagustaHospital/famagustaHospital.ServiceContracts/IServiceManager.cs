@@ -17,6 +17,7 @@ public interface IServiceManager
     IQualificationService QualificationService { get; }
     IExperienceService ExperienceService { get; }
     IDoctorAvailabilityService DoctorAvailabilityService { get; }
+    ISessionService SessionService { get; }
 
     //IEntityService EntityService { get; }
 

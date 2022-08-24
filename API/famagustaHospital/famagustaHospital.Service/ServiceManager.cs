@@ -20,12 +20,13 @@ public sealed class ServiceManager : IServiceManager
     private readonly Lazy<IQualificationService> _qualificationService;
     private readonly Lazy<IExperienceService> _experienceService;
     private readonly Lazy<IDoctorAvailabilityService> _doctorAvailabilityService;
+    private readonly Lazy<ISessionService> _sessionService;
 
 
     public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper, UserManager<SystemUser> manager, IOptions<JwtConfiguration> configuration)
     {
         _authService = new Lazy<IAuthenticationService>(() => new AuthenticationService(logger, mapper, manager, configuration));
-        _userService = new Lazy<ISystemUserService>(() => new SystemUserService(repositoryManager, logger,manager, mapper));
+        _userService = new Lazy<ISystemUserService>(() => new SystemUserService(repositoryManager, logger, manager, mapper));
         _patientService = new Lazy<IPatientService>(() => new PatientService(repositoryManager, logger, mapper));
         _patientAuthService = new Lazy<IPatientAuthenticationService>(() => new PatientAuthenticationService(repositoryManager, logger, mapper, manager, configuration));
         _doctorAuthService = new Lazy<IDoctorAuthenticationService>(() => new DoctorAuthenticationService(repositoryManager, logger, mapper, manager, configuration));
@@ -34,6 +35,7 @@ public sealed class ServiceManager : IServiceManager
         _qualificationService = new Lazy<IQualificationService>(() => new QualificationService(repositoryManager, logger, mapper));
         _experienceService = new Lazy<IExperienceService>(() => new ExperienceService(repositoryManager, logger, mapper));
         _doctorAvailabilityService = new Lazy<IDoctorAvailabilityService>(() => new DoctorAvailabilityService(repositoryManager, logger, mapper));
+        _sessionService = new Lazy<ISessionService>(() => new SessionService(repositoryManager, logger, mapper));
         //_entityService = new Lazy<IEntityService>(() => new EntityService(repositoryManager, logger, mapper));
 
     }
@@ -47,6 +49,7 @@ public sealed class ServiceManager : IServiceManager
     public IQualificationService QualificationService => _qualificationService.Value;
     public IExperienceService ExperienceService => _experienceService.Value;
     public IDoctorAvailabilityService DoctorAvailabilityService => _doctorAvailabilityService.Value;
+    public ISessionService SessionService => _sessionService.Value;
     //public IEntityService EntityService => _entityService.Value;
 
 }

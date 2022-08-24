@@ -21,7 +21,7 @@ namespace famagustaHospital.Presentation.Controllers
         {
             _service = service;
         }
-        [HttpPost("doctoravailability")]
+        [HttpPost("availabilities")]
         public async Task<IActionResult> CreateDoctorAvailability(string id,DoctorAvailabilityCreationDto doctorAvailabilityForCreation)
         {
             var doctor = _service.DoctorService.GetDoctor(id, trackChanges: false);

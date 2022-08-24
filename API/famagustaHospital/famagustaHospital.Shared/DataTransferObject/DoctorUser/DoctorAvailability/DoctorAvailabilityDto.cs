@@ -8,8 +8,10 @@ namespace famagustaHospital.Shared.DataTransferObject.DoctorUser.DoctorAvailabil
 {
     public record DoctorAvailabilityDto
     {
+        public Guid Id { get; set; }
         public DateTime StartAt { get; set; }
         public DateTime EndAt { get; set; }
         public bool IsAvailable { get; set; }
+        public Guid DoctorUserId { get; set; }
     }
 }
