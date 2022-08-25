@@ -20,6 +20,7 @@ namespace famagustaHospital.Entities.Models
         public PatientUser PatientUser { get; set; }
         public Guid DoctorUserId { get; set; }
         public DoctorUser DoctorUser { get; set; }
+        public Guid DoctorAvailabilityId { get; set; }
 
     }
 }

@@ -14,5 +14,6 @@ namespace famagustaHospital.Shared.DataTransferObject.Session
         public string Status { get; set; }
         public Guid PatientUserId { get; set; }
         public Guid DoctorUserId { get; set; }
+        public Guid DoctorAvailabilityId { get; set; }
     }
 }

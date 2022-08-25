@@ -29,6 +29,7 @@ public class MappingProfile : Profile
         CreateMap<Experience,ExperienceDto>();
         CreateMap<DoctorAvailabilityCreationDto, DoctorAvailability>();
         CreateMap<DoctorAvailability, DoctorAvailabilityDto>();
+        CreateMap<DoctorAvailabilityUpdateDto, DoctorAvailability>();
         CreateMap<SessionCreationDto, Session>();
         CreateMap<Session, SessionDto>();
     }
