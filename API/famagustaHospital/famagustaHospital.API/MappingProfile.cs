@@ -8,6 +8,7 @@ using famagustaHospital.Shared.DataTransferObject.DoctorUser.Qualification;
 using famagustaHospital.Shared.DataTransferObject.PatientUser;
 using famagustaHospital.Shared.DataTransferObject.PatientUser.Chronic;
 using famagustaHospital.Shared.DataTransferObject.Session;
+using famagustaHospital.Shared.DataTransferObject.Session.Medicine;
 using famagustaHospital.Shared.DataTransferObject.User;
 
 namespace famagustaHospital.API;
@@ -32,6 +33,8 @@ public class MappingProfile : Profile
         CreateMap<DoctorAvailabilityUpdateDto, DoctorAvailability>();
         CreateMap<SessionCreationDto, Session>();
         CreateMap<Session, SessionDto>();
+        CreateMap<MedicineCreationDto, Medicine>();
+        CreateMap<Medicine, MedicineDto>();
     }
 }
 

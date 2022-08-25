@@ -21,6 +21,7 @@ public sealed class ServiceManager : IServiceManager
     private readonly Lazy<IExperienceService> _experienceService;
     private readonly Lazy<IDoctorAvailabilityService> _doctorAvailabilityService;
     private readonly Lazy<ISessionService> _sessionService;
+    private readonly Lazy<IMedicineService> _medicineService;
 
 
     public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper, UserManager<SystemUser> manager, IOptions<JwtConfiguration> configuration)
@@ -36,6 +37,7 @@ public sealed class ServiceManager : IServiceManager
         _experienceService = new Lazy<IExperienceService>(() => new ExperienceService(repositoryManager, logger, mapper));
         _doctorAvailabilityService = new Lazy<IDoctorAvailabilityService>(() => new DoctorAvailabilityService(repositoryManager, logger, mapper));
         _sessionService = new Lazy<ISessionService>(() => new SessionService(repositoryManager, logger, mapper));
+        _medicineService = new Lazy<IMedicineService>(() => new MedicineService(repositoryManager, logger, mapper));
         //_entityService = new Lazy<IEntityService>(() => new EntityService(repositoryManager, logger, mapper));
 
     }
@@ -50,6 +52,7 @@ public sealed class ServiceManager : IServiceManager
     public IExperienceService ExperienceService => _experienceService.Value;
     public IDoctorAvailabilityService DoctorAvailabilityService => _doctorAvailabilityService.Value;
     public ISessionService SessionService => _sessionService.Value;
+    public IMedicineService MedicineService => _medicineService.Value;
     //public IEntityService EntityService => _entityService.Value;
 
 }

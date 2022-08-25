@@ -16,6 +16,7 @@ public interface IRepositoryManager
     IExperienceRepository Experience { get; }
     IDoctorAvailabilityRepository DoctorAvailability { get; }
     ISessionRepository Session { get; }
+    IMedicineRepository Medicine { get; }
     Task SaveAsync();
 
 }
