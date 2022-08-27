@@ -30,5 +30,23 @@ namespace famagustaHospital.Service
             var sessionToReturn = _mapper.Map<SessionDto>(sessionEntity);
             return sessionToReturn;
         }
+        public async Task UpdateSessionAsync(Guid sessionId, SessionUpdateDto sessionForUpdate, bool trackChanges)
+        {
+            var sessionEntity = await _repository.Session.GetSessionAsync(sessionId, trackChanges);
+            _mapper.Map(sessionForUpdate, sessionEntity);
+            await _repository.SaveAsync();
+        }
+        public async Task<SessionDto> GetSessionAsync(Guid sessionId, bool trackChanges)
+        {
+            var sessionEntity = await _repository.Session.GetSessionAsync(sessionId, trackChanges);
+            var sessionToReturn = _mapper.Map<SessionDto>(sessionEntity);
+            return sessionToReturn;
+        }
+        public SessionDto GetSession(Guid sessionId, bool trackChanges)
+        {
+            var sessionEntity = _repository.Session.GetSession(sessionId, trackChanges);
+            var sessionToReturn = _mapper.Map<SessionDto>(sessionEntity);
+            return sessionToReturn;
+        }
     }
 }

@@ -33,6 +33,7 @@ public class MappingProfile : Profile
         CreateMap<DoctorAvailabilityUpdateDto, DoctorAvailability>();
         CreateMap<SessionCreationDto, Session>();
         CreateMap<Session, SessionDto>();
+        CreateMap<SessionUpdateDto, Session>();
         CreateMap<MedicineCreationDto, Medicine>();
         CreateMap<Medicine, MedicineDto>();
     }

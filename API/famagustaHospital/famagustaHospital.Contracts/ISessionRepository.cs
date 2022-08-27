@@ -10,5 +10,8 @@ namespace famagustaHospital.Contracts
     public interface ISessionRepository
     {
         void CreateSession(Session session);
+        Task<Session> GetSessionAsync(Guid sessionId,bool trackChanges);
+        Session GetSession(Guid sessionId, bool trackChanges);
+
     }
 }

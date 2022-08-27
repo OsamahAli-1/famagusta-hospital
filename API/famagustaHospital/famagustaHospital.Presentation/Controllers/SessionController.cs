@@ -50,5 +50,12 @@ namespace famagustaHospital.Presentation.Controllers
             await _service.DoctorAvailabilityService.UpdateDoctorAvailabilityAsync(doctorAvailability.Id, doctorAvailabilityForUpdate, trackChanges: true);
             return Ok(createdSession);
         }
+        [Authorize(Roles = "Doctor")]
+        [HttpPut("{id}/sessions/{sessionId}")]
+        public async Task<IActionResult> UpdateSession(string id,Guid sessionId, [FromBody] SessionUpdateDto sessionForUpdate)
+        {
+            await _service.SessionService.UpdateSessionAsync(sessionId,sessionForUpdate,trackChanges: true);
+            return StatusCode(201);
+        }
     }
 }
