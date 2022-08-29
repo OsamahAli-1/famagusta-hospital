@@ -12,5 +12,6 @@ namespace famagustaHospital.Contracts
         void CreateDoctor(DoctorUser doctorUser);
         Task<DoctorUser> GetDoctorAsync(string userId, bool trackChanges);
         DoctorUser GetDoctor(string userId, bool trackChanges);
+        Task<IEnumerable<DoctorUser>> GetAllDoctorsAsync(bool trackChanges);
     }
 }

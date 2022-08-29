@@ -18,3 +18,5 @@ C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospita
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\obj\Debug\net6.0\ref\famagustaHospital.Presentation.dll
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Entities.dll
 C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Entities.pdb
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Contracts.dll
+C:\Users\OSAMA\Desktop\famagusta-hospital\API\famagustaHospital\famagustaHospital.Presentation\bin\Debug\net6.0\famagustaHospital.Contracts.pdb

@@ -11,5 +11,6 @@ namespace famagustaHospital.ServiceContracts
     {
         Task<DoctorUserDto> GetDoctorAsync(string userId, bool trackChanges);
         DoctorUserDto GetDoctor(string userId, bool trackChanges);
+        Task<IEnumerable<DoctorUserDto>> GetAllDoctorsAsync(bool trackChanges);
     }
 }

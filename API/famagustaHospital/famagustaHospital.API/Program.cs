@@ -4,6 +4,7 @@ using famagustaHospital.Presentation.ActionFilters;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,12 @@ builder.Services.AddControllers(config =>
         Duration = 120
     });
 }).AddXmlDataContractSerializerFormatters()
-.AddApplicationPart(typeof(famagustaHospital.Presentation.AssemblyReference).Assembly);
+.AddApplicationPart(typeof(famagustaHospital.Presentation.AssemblyReference).Assembly)
+.AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
 
 var app = builder.Build();
 

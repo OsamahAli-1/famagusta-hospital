@@ -19,6 +19,8 @@ namespace famagustaHospital.Repository
             await FindByCondition(d => d.systemUserId.Equals(userId), trackChanges).SingleOrDefaultAsync();
         public DoctorUser GetDoctor(string userId, bool trackChanges) =>
             FindByCondition(d => d.systemUserId.Equals(userId), trackChanges).SingleOrDefault();
+        public async Task<IEnumerable<DoctorUser>> GetAllDoctorsAsync(bool trackChanges) =>
+            await FindAll(trackChanges).Include(x=>x.systemUser).ToListAsync();
 
     }
 }

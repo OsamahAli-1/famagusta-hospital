@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace famagustaHospital.Presentation.Controllers
 {
-    [Route("api/doctors/{id}")]
+    [Route("api/doctors")]
     [ApiController]
     [Authorize]
     public class DoctorAvailabilityController:ControllerBase
@@ -21,12 +21,19 @@ namespace famagustaHospital.Presentation.Controllers
         {
             _service = service;
         }
-        [HttpPost("availabilities")]
+        [HttpPost("{id}/availabilities")]
         public async Task<IActionResult> CreateDoctorAvailability(string id,DoctorAvailabilityCreationDto doctorAvailabilityForCreation)
         {
             var doctor = _service.DoctorService.GetDoctor(id, trackChanges: false);
             var createdDoctorAvailability = await _service.DoctorAvailabilityService.CreateDoctorAvailability(doctor.Id, doctorAvailabilityForCreation);
             return Ok(createdDoctorAvailability);
+        }
+        [HttpGet("{id}/availabilities")]
+        public async Task<IActionResult> GetDoctorAvailabilitesOfDoctorAsync(string id)
+        {
+            var doctor = _service.DoctorService.GetDoctor(id, trackChanges: false);
+            var doctorAvailabilities = await _service.DoctorAvailabilityService.GetDoctorAvailabilitesOfDoctorAsync(doctor.Id, trackChanges: false);
+            return Ok(doctorAvailabilities);
         }
     }
 }

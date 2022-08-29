@@ -1674,6 +1674,7 @@
           "Marvin.Cache.Headers": "6.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
+          "famagustaHospital.Contracts": "1.0.0",
           "famagustaHospital.Entities": "1.0.0",
           "famagustaHospital.ServiceContracts": "1.0.0"
         },

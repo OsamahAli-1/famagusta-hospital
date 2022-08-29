@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\famagustaHospital.Contracts\famagustaHospital.Contracts.csproj" />
     <ProjectReference Include="..\famagustaHospital.Entities\famagustaHospital.Entities.csproj" />
     <ProjectReference Include="..\famagustaHospital.ServiceContracts\famagustaHospital.ServiceContracts.csproj" />
   </ItemGroup>

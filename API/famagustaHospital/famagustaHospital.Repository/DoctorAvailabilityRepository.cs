@@ -17,6 +17,8 @@ namespace famagustaHospital.Repository
         public void CreateDoctorAvailability(DoctorAvailability doctorAvailability) => Create(doctorAvailability);
         public async Task<DoctorAvailability> GetDoctorAvailabilityAsync(Guid doctorAvailabilityId, bool trackChanges) =>
             await FindByCondition(a => a.Id.Equals(doctorAvailabilityId), trackChanges).SingleOrDefaultAsync();
+        public async Task<IEnumerable<DoctorAvailability>> GetDoctorAvailabilitesOfDoctorAsync(Guid doctorId, bool trackChanges) =>
+            await FindByCondition(a => a.DoctorUserId.Equals(doctorId), trackChanges).ToListAsync();
         public DoctorAvailability GetDoctorAvailability(Guid doctorAvailabilityId, bool trackChanges) =>
             FindByCondition(a => a.Id.Equals(doctorAvailabilityId), trackChanges).SingleOrDefault();
     }
