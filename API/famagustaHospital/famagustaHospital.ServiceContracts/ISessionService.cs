@@ -13,5 +13,7 @@ namespace famagustaHospital.ServiceContracts
         Task UpdateSessionAsync(Guid sessionId,SessionUpdateDto sessionForUpdate,bool trackChanges);
         Task<SessionDto> GetSessionAsync(Guid sessionId, bool trackChanges);
         SessionDto GetSession(Guid sessionId, bool trackChanges);
+        Task<IEnumerable<SessionDto>> GetPatientSessionsAsync(Guid patientId, bool trackChanges);
+        Task<IEnumerable<SessionDto>> GetDoctorSessionsAsync(Guid doctorId, bool trackChanges);
     }
 }

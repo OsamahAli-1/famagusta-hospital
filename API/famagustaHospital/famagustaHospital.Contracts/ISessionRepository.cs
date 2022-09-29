@@ -12,6 +12,8 @@ namespace famagustaHospital.Contracts
         void CreateSession(Session session);
         Task<Session> GetSessionAsync(Guid sessionId,bool trackChanges);
         Session GetSession(Guid sessionId, bool trackChanges);
+        Task<IEnumerable<Session>> GetPatientSessionsAsync(Guid patientId, bool trackChanges);
+        Task<IEnumerable<Session>> GetDoctorSessionsAsync(Guid doctorId, bool trackChanges);
 
     }
 }

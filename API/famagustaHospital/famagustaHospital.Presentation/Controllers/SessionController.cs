@@ -57,5 +57,24 @@ namespace famagustaHospital.Presentation.Controllers
             await _service.SessionService.UpdateSessionAsync(sessionId,sessionForUpdate,trackChanges: true);
             return StatusCode(201);
         }
+        [HttpGet("{id}/sessions")]
+        public async Task<IActionResult> GetUserSessions(string id)
+        {
+            var user = await _service.SystemUserService.GetUserAsync(id, trackChanges: false);
+            if (user.Role.Equals("Patient")){
+                var patient = _service.PatientService.GetPatient(id, trackChanges: false);
+                var patientSessions = await _service.SessionService.GetPatientSessionsAsync(patient.Id, trackChanges: false);
+                return Ok(patientSessions);
+            }
+            else if(user.Role.Equals("Doctor"))
+            {
+                var doctor = _service.DoctorService.GetDoctor(id, trackChanges: false);
+                var doctorSessions = await _service.SessionService.GetDoctorSessionsAsync(doctor.Id, trackChanges: false);
+                return Ok(doctorSessions);
+            }
+            return BadRequest();
+            
+        }
+        
     }
 }

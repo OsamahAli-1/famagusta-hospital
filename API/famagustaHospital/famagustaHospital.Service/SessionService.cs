@@ -48,5 +48,17 @@ namespace famagustaHospital.Service
             var sessionToReturn = _mapper.Map<SessionDto>(sessionEntity);
             return sessionToReturn;
         }
+        public async Task<IEnumerable<SessionDto>> GetPatientSessionsAsync(Guid patientId, bool trackChanges)
+        {
+            var patientSessionsEntities = await _repository.Session.GetPatientSessionsAsync(patientId, trackChanges);
+            var patientSessionsToReturn = _mapper.Map<IEnumerable<SessionDto>>(patientSessionsEntities);
+            return patientSessionsToReturn;
+        }
+        public async Task<IEnumerable<SessionDto>> GetDoctorSessionsAsync(Guid doctorId, bool trackChanges)
+        {
+            var doctorSessionsEntities = await _repository.Session.GetDoctorSessionsAsync(doctorId, trackChanges);
+            var doctorSessionsToReturn = _mapper.Map<IEnumerable<SessionDto>>(doctorSessionsEntities);
+            return doctorSessionsToReturn;
+        }
     }
 }
