@@ -17,8 +17,14 @@ namespace famagustaHospital.Repository
         }
         public void CreatePatient(PatientUser patientUser) => Create(patientUser);
         public async Task<PatientUser> GetPatientAsync(string userId, bool trackChanges) =>
-            await FindByCondition(p => p.systemUserId.Equals(userId), trackChanges).SingleOrDefaultAsync();
+            await FindByCondition(p => p.systemUserId.Equals(userId), trackChanges)
+            .Include(x=>x.systemUser)
+            .Include(x => x.Chronics)
+            .SingleOrDefaultAsync();
         public PatientUser GetPatient(string userId, bool trackChanges) =>
-            FindByCondition(p => p.systemUserId.Equals(userId), trackChanges).SingleOrDefault();
+            FindByCondition(p => p.systemUserId.Equals(userId), trackChanges)
+            .Include(x=>x.systemUser)
+            .Include(x=>x.Chronics)
+            .SingleOrDefault();
     }
 }

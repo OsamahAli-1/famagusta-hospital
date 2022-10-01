@@ -1,4 +1,6 @@
-﻿using System;
+﻿using famagustaHospital.Shared.DataTransferObject.DoctorUser.Experience;
+using famagustaHospital.Shared.DataTransferObject.DoctorUser.Qualification;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +17,8 @@ namespace famagustaHospital.Shared.DataTransferObject.DoctorUser
         public string? Position { get; set; }
         public string systemUserId { get; set; }
         public UserViewDto UserViewDto { get; set; }
+        public ICollection<ExperienceDto> ExperienceDtos { get; set; }
+        public ICollection<QualificationDto> QualificationDtos { get; set; }
+      
     }
 }

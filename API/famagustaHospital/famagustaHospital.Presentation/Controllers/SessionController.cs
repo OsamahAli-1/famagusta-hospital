@@ -57,6 +57,16 @@ namespace famagustaHospital.Presentation.Controllers
             await _service.SessionService.UpdateSessionAsync(sessionId,sessionForUpdate,trackChanges: true);
             return StatusCode(201);
         }
+        [HttpPut("{id}/sessions/{sessionId}/cancel")]
+        public async Task<IActionResult> CancelSession(string id, Guid sessionId)
+        {
+            var sessionCancel = new SessionCancelDto
+            {
+                Status = "cancelled"
+            };
+            await _service.SessionService.CancelSessionAsync(sessionId, sessionCancel, trackChanges: true);
+            return StatusCode(201);
+        }
         [HttpGet("{id}/sessions")]
         public async Task<IActionResult> GetUserSessions(string id)
         {

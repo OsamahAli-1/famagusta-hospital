@@ -30,9 +30,17 @@ namespace famagustaHospital.Presentation.Controllers
             //var doctors = await _repository.Doctor.GetAllDoctorsAsync(trackChanges: false);
             var doctors = await _service.DoctorService.GetAllDoctorsAsync(trackChanges: false);
             return Ok(doctors);
-        } 
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetDoctorAsync(string id)
+        {
+            //var doctors = await _repository.Doctor.GetAllDoctorsAsync(trackChanges: false);
+            var doctor = await _service.DoctorService.GetDoctorAsync(id,trackChanges: false);
+            return Ok(doctor);
+        }
 
-        
+
+
 
     }
 }

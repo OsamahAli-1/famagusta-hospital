@@ -16,11 +16,23 @@ namespace famagustaHospital.Repository
         }
         public void CreateDoctor(DoctorUser doctorUser) => Create(doctorUser);
         public async Task<DoctorUser> GetDoctorAsync(string userId, bool trackChanges)=>
-            await FindByCondition(d => d.systemUserId.Equals(userId), trackChanges).SingleOrDefaultAsync();
+            await FindByCondition(d => d.systemUserId.Equals(userId), trackChanges)
+            .Include(x => x.systemUser)
+            .Include(x => x.experiences)
+            .Include(x => x.qualifications)
+            .SingleOrDefaultAsync();
         public DoctorUser GetDoctor(string userId, bool trackChanges) =>
-            FindByCondition(d => d.systemUserId.Equals(userId), trackChanges).SingleOrDefault();
+            FindByCondition(d => d.systemUserId.Equals(userId), trackChanges)
+            .Include(x => x.systemUser)
+            .Include(x => x.experiences)
+            .Include(x => x.qualifications)
+            .SingleOrDefault();
         public async Task<IEnumerable<DoctorUser>> GetAllDoctorsAsync(bool trackChanges) =>
-            await FindAll(trackChanges).Include(x=>x.systemUser).ToListAsync();
+            await FindAll(trackChanges)
+            .Include(x=>x.systemUser)
+            .Include(x=>x.experiences)
+            .Include(x=>x.qualifications)
+            .ToListAsync();
 
     }
 }

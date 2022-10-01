@@ -21,10 +21,14 @@ public class MappingProfile : Profile
         CreateMap<DoctorUserCreationDto, SystemUser>();
         CreateMap<DoctorUserCreationDto, DoctorUser>();
         CreateMap<DoctorUser, DoctorUserDto>()
-            .ForMember(dest=>dest.UserViewDto,act=>act.MapFrom(src=>src.systemUser));
+            .ForMember(dest=>dest.UserViewDto,act=>act.MapFrom(src=>src.systemUser))
+            .ForMember(dest => dest.ExperienceDtos, act => act.MapFrom(src => src.experiences))
+            .ForMember(dest => dest.QualificationDtos, act => act.MapFrom(src => src.qualifications));
         CreateMap<ChronicCreationDto, Chronic>();
         CreateMap<Chronic, ChronicDto>();
-        CreateMap<PatientUser, PatientUserDto>();
+        CreateMap<PatientUser, PatientUserDto>()
+            .ForMember(dest => dest.UserViewDto, act => act.MapFrom(src => src.systemUser))
+            .ForMember(dest => dest.ChronicDtos, act => act.MapFrom(src => src.Chronics));
         CreateMap<QualificationCreationDto, Qualification>();
         CreateMap<Qualification, QualificationDto>();
         CreateMap<ExperienceCreationDto, Experience>();
@@ -35,6 +39,7 @@ public class MappingProfile : Profile
         CreateMap<SessionCreationDto, Session>();
         CreateMap<Session, SessionDto>();
         CreateMap<SessionUpdateDto, Session>();
+        CreateMap<SessionCancelDto, Session>();
         CreateMap<MedicineCreationDto, Medicine>();
         CreateMap<Medicine, MedicineDto>();
         CreateMap<SystemUser, UserViewDto>();

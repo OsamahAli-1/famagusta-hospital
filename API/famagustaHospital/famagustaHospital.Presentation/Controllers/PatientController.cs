@@ -12,9 +12,9 @@ using famagustaHospital.Entities.Models;
 
 namespace famagustaHospital.Presentation.Controllers
 {
-    [Route("api/patient/{id}")]
+    [Route("api/patients")]
     [ApiController]
-    [Authorize(Roles ="Patient")]
+    //[Authorize]
     public class PatientController : ControllerBase
     {
         private readonly IServiceManager _service;
@@ -23,9 +23,13 @@ namespace famagustaHospital.Presentation.Controllers
         {
             _service = service;
         }
-        
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetPatientAsync(string id)
+        {
+            var patient = await _service.PatientService.GetPatientAsync(id,trackChanges: false);
+            return Ok(patient);
+        }
 
-        
 
     }
 }
