@@ -1,4 +1,5 @@
-﻿using System;
+﻿using famagustaHospital.Shared.DataTransferObject.Session.Medicine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,6 @@ namespace famagustaHospital.Shared.DataTransferObject.Session
         public Guid PatientUserId { get; set; }
         public Guid DoctorUserId { get; set; }
         public Guid DoctorAvailabilityId { get; set; }
+        public ICollection<MedicineDto> MedicineDtos { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace famagustaHospital.ServiceContracts
     public interface IChronicService
     {
         Task<ChronicDto> CreateChronic(Guid patientId,ChronicCreationDto chronicForCreation);
+        Task DeleteChronicAsync(Guid chronicId,bool trackChanges);
     }
 }

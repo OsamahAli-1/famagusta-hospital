@@ -11,5 +11,7 @@ namespace famagustaHospital.Contracts
     public interface IChronicRepository
     {
         void CreateChronic(Chronic chronic);
+        void DeleteChronic(Chronic chronic);
+        Task<Chronic> GetChronicAsync(Guid chronicId, bool trackChanges);
     }
 }

@@ -85,6 +85,12 @@ namespace famagustaHospital.Presentation.Controllers
             return BadRequest();
             
         }
-        
+
+        [HttpGet("{id}/sessions/{sessionId}")]
+        public async Task<IActionResult> GetSession(string id,Guid sessionId)
+        {
+            var sessions = await _service.SessionService.GetSessionAsync(sessionId, trackChanges: false);
+            return Ok(sessions);
+        }
     }
 }

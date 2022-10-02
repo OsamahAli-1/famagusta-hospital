@@ -28,5 +28,11 @@ namespace famagustaHospital.Presentation.Controllers
             var createdChronic = await _service.ChronicService.CreateChronic(patient.Id, chronicForCreation);
             return Ok(createdChronic);
         }
+        [HttpDelete("chronic/{chronicId}")]
+        public async Task<IActionResult> DeleteChronic(string id,Guid chronicId)
+        {
+            await _service.ChronicService.DeleteChronicAsync(chronicId, trackChanges: false);
+            return NoContent();
+        }
     }
 }

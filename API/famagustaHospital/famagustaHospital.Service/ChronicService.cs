@@ -32,5 +32,11 @@ namespace famagustaHospital.Service
             var chronicToReturn = _mapper.Map<ChronicDto>(chronicEntity);
             return chronicToReturn;
         }
+        public async Task DeleteChronicAsync(Guid chronicId, bool trackChanges)
+        {
+            var chronic = await _repository.Chronic.GetChronicAsync(chronicId, trackChanges);
+            _repository.Chronic.DeleteChronic(chronic);
+            await _repository.SaveAsync();
+        }
     }
 }
