@@ -28,5 +28,12 @@ public class MedicineController:ControllerBase
         var createdMedicine = await _service.MedicineService.CreateMedicine(sessionId, medicineForCreation);
         return Ok(createdMedicine);
     }
+    [HttpDelete("sessions/{sessionId}/medicines/{medicineId}")]
+    [Authorize(Roles = "Doctor")]
+    public async Task<IActionResult> DeleteMedicine(Guid sessionId, Guid medicineId)
+    {
+        await _service.MedicineService.DeleteMedicineAsync(medicineId, trackChanges: false);
+        return NoContent();
+    }
 
 }

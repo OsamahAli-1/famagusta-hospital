@@ -31,4 +31,10 @@ public class MedicineService:IMedicineService
         var medicineToReturn = _mapper.Map<MedicineDto>(medicineEntity);
         return medicineToReturn;
     }
+    public async Task DeleteMedicineAsync(Guid medicineId,bool trackChanges)
+    {
+        var medicine = await _repository.Medicine.GetMedicineAsync(medicineId, trackChanges);
+        _repository.Medicine.DeleteMedicine(medicine);
+        await _repository.SaveAsync();
+    }
 }

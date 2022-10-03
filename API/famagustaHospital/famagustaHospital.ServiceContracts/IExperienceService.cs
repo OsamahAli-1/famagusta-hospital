@@ -10,5 +10,6 @@ namespace famagustaHospital.ServiceContracts
     public interface IExperienceService
     {
         Task<ExperienceDto> CreateExperience(Guid doctorId, ExperienceCreationDto experienceForCreation);
+        Task DeleteExperience(Guid experienceId, bool trackChanges);
     }
 }

@@ -12,7 +12,7 @@ namespace famagustaHospital.Presentation.Controllers
 {
     [Route("api/doctors/{id}")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ExperienceController:ControllerBase
     {
         private readonly IServiceManager _service;
@@ -21,12 +21,19 @@ namespace famagustaHospital.Presentation.Controllers
             _service = service;
         }
         [HttpPost("experience")]
-        [Authorize(Roles ="Doctor")]
+        //[Authorize(Roles ="Doctor")]
         public async Task<IActionResult> CreateExperience(string id, ExperienceCreationDto experienceForCreation)
         {
             var doctor = _service.DoctorService.GetDoctor(id, trackChanges: false);
             var createdExperience = await _service.ExperienceService.CreateExperience(doctor.Id,experienceForCreation);
             return Ok(createdExperience);
+        }
+        [HttpDelete("experience/{experienceId}")]
+        //[Authorize(Roles = "Doctor")]
+        public async Task<IActionResult> DeleteExperience(string id,Guid experienceId)
+        {
+            await _service.ExperienceService.DeleteExperience(experienceId, trackChanges: false);
+            return NoContent();
         }
 
     }

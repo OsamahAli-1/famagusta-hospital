@@ -31,5 +31,11 @@ namespace famagustaHospital.Service
             var experienceToReturn = _mapper.Map<ExperienceDto>(experienceEntity);
             return experienceToReturn;
         }
+        public async Task DeleteExperience(Guid experienceId, bool trackChanges)
+        {
+            var experience = await _repository.Experience.GetExperienceAsync(experienceId, trackChanges);
+            _repository.Experience.DeleteExperience(experience);
+            await _repository.SaveAsync();
+        }
     }
 }

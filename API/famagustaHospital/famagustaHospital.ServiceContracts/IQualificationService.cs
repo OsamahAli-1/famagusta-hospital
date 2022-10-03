@@ -10,5 +10,6 @@ namespace famagustaHospital.ServiceContracts
     public interface IQualificationService
     {
         Task<QualificationDto> CreateQualification(Guid doctorId,QualificationCreationDto qualificationForCreation);
+        Task DeleteQualificationAsync(Guid qualificationId,bool trackChanges);
     }
 }

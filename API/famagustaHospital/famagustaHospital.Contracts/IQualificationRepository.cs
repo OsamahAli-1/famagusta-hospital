@@ -10,5 +10,7 @@ namespace famagustaHospital.Contracts
     public interface IQualificationRepository
     {
         void CreateQualification(Qualification qualification);
+        Task<Qualification> GetQualificationAsync(Guid qualificationId,bool trackChanges);
+        void DeleteQualification(Qualification qualification);
     }
 }

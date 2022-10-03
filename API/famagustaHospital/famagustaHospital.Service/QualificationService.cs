@@ -31,5 +31,11 @@ namespace famagustaHospital.Service
             var qualificationToReturn = _mapper.Map<QualificationDto>(qualificationEntity);
             return qualificationToReturn;
         }
+        public async Task DeleteQualificationAsync(Guid qualificationId, bool trackChanges)
+        {
+            var qualification = await _repository.Qualification.GetQualificationAsync(qualificationId, trackChanges);
+            _repository.Qualification.DeleteQualification(qualification);
+            await _repository.SaveAsync();
+        }
     }
 }

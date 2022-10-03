@@ -10,4 +10,6 @@ namespace famagustaHospital.Contracts;
 public interface IMedicineRepository
 {
     void CreateMedicine(Medicine medicine);
+    void DeleteMedicine(Medicine medicine);
+    Task<Medicine> GetMedicineAsync(Guid medicineId,bool trackChanges);
 }

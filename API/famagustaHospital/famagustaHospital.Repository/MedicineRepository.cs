@@ -1,5 +1,6 @@
 ﻿using famagustaHospital.Contracts;
 using famagustaHospital.Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,4 +15,7 @@ public class MedicineRepository : RepositoryBase<Medicine>, IMedicineRepository
     {
     }
     public void CreateMedicine(Medicine medicine) => Create(medicine);
+    public void DeleteMedicine(Medicine medicine) => Delete(medicine);
+    public async Task<Medicine> GetMedicineAsync(Guid medicineId, bool trackChanges) =>
+        await FindByCondition(m => m.Id.Equals(medicineId), trackChanges).SingleOrDefaultAsync();
 }
