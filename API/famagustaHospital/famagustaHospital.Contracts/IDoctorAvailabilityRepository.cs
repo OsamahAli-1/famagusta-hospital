@@ -13,5 +13,6 @@ namespace famagustaHospital.Contracts
         Task<DoctorAvailability> GetDoctorAvailabilityAsync(Guid doctorAvailabilityId, bool trackChanges);
         Task<IEnumerable<DoctorAvailability>> GetDoctorAvailabilitesOfDoctorAsync(Guid doctorId, bool trackChanges);
         DoctorAvailability GetDoctorAvailability(Guid doctorAvailabilityId, bool trackChanges);
+        void DeleteDoctorAvailability(DoctorAvailability doctorAvailability);
     }
 }

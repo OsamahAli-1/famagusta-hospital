@@ -1,5 +1,6 @@
 ﻿using famagustaHospital.ServiceContracts;
 using famagustaHospital.Shared.DataTransferObject.DoctorUser.DoctorAvailability;
+using famagustaHospital.Shared.DataTransferObject.Session;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -35,5 +36,21 @@ namespace famagustaHospital.Presentation.Controllers
             var doctorAvailabilities = await _service.DoctorAvailabilityService.GetDoctorAvailabilitesOfDoctorAsync(doctor.Id, trackChanges: false);
             return Ok(doctorAvailabilities);
         }
+        [HttpDelete("{id}/availabilities/{availabilityId}")]
+        public async Task<IActionResult> DeleteDoctorAvailability(string id,Guid availabilityId)
+        {
+            await _service.DoctorAvailabilityService.DeleteDoctorAvailability(availabilityId, trackChanges: false);
+            var session = _service.SessionService.GetSessionByAvailabilityId(availabilityId, trackChanges: false);
+            if(session != null)
+            {
+                var sessionCancel = new SessionCancelDto
+                {
+                    Status = "cancelled - doctor not available"
+                };
+                await _service.SessionService.CancelSessionAsync(session.Id, sessionCancel, trackChanges: true);
+            }
+            return NoContent();
+        }
+
     }
 }

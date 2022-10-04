@@ -104,9 +104,9 @@ public static class ServiceExtension
         {
             s.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Project Title",
+                Title = "Famagusta Hospital API",
                 Version = "v1",
-                Description = "Cloud Soft Project Framework API.",
+                Description = "Famagusta Hospital Appointment Management API",
             });
 
             s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

@@ -21,5 +21,6 @@ namespace famagustaHospital.Repository
             await FindByCondition(a => a.DoctorUserId.Equals(doctorId), trackChanges).ToListAsync();
         public DoctorAvailability GetDoctorAvailability(Guid doctorAvailabilityId, bool trackChanges) =>
             FindByCondition(a => a.Id.Equals(doctorAvailabilityId), trackChanges).SingleOrDefault();
+        public void DeleteDoctorAvailability(DoctorAvailability doctorAvailability) => Delete(doctorAvailability);
     }
 }

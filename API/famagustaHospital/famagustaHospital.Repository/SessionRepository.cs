@@ -23,6 +23,8 @@ namespace famagustaHospital.Repository
             FindByCondition(s => s.Id.Equals(sessionId), trackChanges)
             .Include(x => x.medicines)
             .SingleOrDefault();
+        public Session GetSessionByAvailabilityId(Guid doctorAvailabilityId, bool trackChanges) =>
+            FindByCondition(s => s.DoctorAvailabilityId.Equals(doctorAvailabilityId), trackChanges).SingleOrDefault();
         public async Task<IEnumerable<Session>> GetPatientSessionsAsync(Guid patientId, bool trackChanges) =>
             await FindByCondition(s => s.PatientUserId.Equals(patientId), trackChanges).ToListAsync();
         public async Task<IEnumerable<Session>> GetDoctorSessionsAsync(Guid doctorId, bool trackChanges) =>
