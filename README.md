@@ -1,1 +1,1 @@
-# famagusta-hospital
+# famagusta-hospital-api
